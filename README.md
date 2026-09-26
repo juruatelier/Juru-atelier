@@ -11,3 +11,7 @@ A zero-dependency static landing page for juruatelier.com.
 6. After DNS verifies, enable **Enforce HTTPS** in GitHub Pages.
 
 `reference-logo.png` is included only as a visual reference; the landing-page mark itself is drawn as SVG so it stays sharp on every screen.
+
+
+## V2
+Footer changed to “THE SUN RISES IN THE EAST” and a CONTACT mail link was added for juruatelier@gmail.com.

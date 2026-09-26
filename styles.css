@@ -1,2 +1,54 @@
 :root{--black:#090908;--ivory:#e9e2d6;--red:#a51f1f;--muted:#9b958b}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--black);color:var(--ivory)}body{font-family:Georgia,'Times New Roman',serif;overflow:hidden}.landing{position:relative;min-height:100svh;display:grid;place-items:center;isolation:isolate;background:radial-gradient(circle at 50% 42%,#161512 0,#0d0d0b 36%,#080807 72%)}.landing:before{content:"";position:absolute;inset:0;z-index:-3;opacity:.32;background:linear-gradient(112deg,transparent 0 23%,rgba(255,255,255,.025) 24%,transparent 27% 58%,rgba(255,255,255,.018) 60%,transparent 63%),radial-gradient(ellipse at 20% 10%,rgba(255,255,255,.035),transparent 34%),radial-gradient(ellipse at 83% 90%,rgba(255,255,255,.025),transparent 30%)}.grain{position:absolute;inset:0;z-index:8;pointer-events:none;opacity:.11;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");mix-blend-mode:soft-light}.thread-layer{position:absolute;inset:0;z-index:-1;opacity:.75}.thread-svg{width:100%;height:100%}#thread{fill:none;stroke:var(--red);stroke-width:1.4;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-dasharray:1800;stroke-dashoffset:1800;filter:drop-shadow(0 0 5px rgba(165,31,31,.08));animation:draw 3.7s cubic-bezier(.65,0,.25,1) .35s forwards, breathe 7s ease-in-out 4s infinite}.hero{text-align:center;transform:translateY(-1.5vh);animation:reveal 1.6s ease 1.7s both}.mark{width:min(22vw,126px);margin:0 auto 22px}.mark svg{width:100%;overflow:visible}.capsule,.inner-thread{fill:none;stroke:var(--red);stroke-width:1.7}.orb{fill:var(--red)}h1{font-weight:400;font-size:clamp(42px,7vw,74px);letter-spacing:.32em;margin:0 0 6px;padding-left:.32em;line-height:.95}.atelier{font-size:clamp(12px,2vw,18px);letter-spacing:.56em;padding-left:.56em}.rule{width:31px;height:1px;background:var(--red);margin:24px auto 25px}.soon{font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:.44em;padding-left:.44em;margin:0;color:#c9c2b7}.edition{font-family:Arial,Helvetica,sans-serif;font-size:8px;letter-spacing:.28em;margin:11px 0 0;color:#6f6b64}footer{position:absolute;bottom:max(26px,4svh);left:0;right:0;display:flex;justify-content:center;align-items:center;gap:11px;font-family:Arial,Helvetica,sans-serif;font-size:7px;letter-spacing:.28em;color:#777169;animation:reveal 1.4s ease 2.2s both}footer i{display:block;width:14px;height:1px;background:#5c1b1b}@keyframes draw{to{stroke-dashoffset:0}}@keyframes reveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes breathe{0%,100%{opacity:.48}50%{opacity:.9}}@media(max-width:600px){.mark{width:102px;margin-bottom:18px}.hero{transform:translateY(-2svh)}#thread{stroke-width:1.1}footer{bottom:24px}.landing{background:radial-gradient(circle at 50% 40%,#151411 0,#0c0c0a 42%,#070706 78%)}}@media(prefers-reduced-motion:reduce){#thread{animation:none;stroke-dashoffset:0}.hero,footer{animation:none}}
+
+
+/* V2 — contact + signature line */
+.contact-link {
+  position: absolute;
+  top: clamp(24px, 4vw, 48px);
+  right: clamp(24px, 5vw, 64px);
+  z-index: 10;
+  color: rgba(242, 235, 219, 0.82);
+  text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.66rem;
+  letter-spacing: 0.26em;
+  transition: color 180ms ease, opacity 180ms ease;
+}
+
+.contact-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  margin-top: 6px;
+  background: #9d1f1f;
+  transition: width 220ms ease;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: #f2ebdb;
+}
+
+.contact-link:hover::after,
+.contact-link:focus-visible::after {
+  width: calc(100% - 0.26em);
+}
+
+footer {
+  letter-spacing: 0.32em;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .contact-link {
+    top: 22px;
+    right: 20px;
+    font-size: 0.6rem;
+  }
+
+  footer {
+    letter-spacing: 0.22em;
+  }
+}
