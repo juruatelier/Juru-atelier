@@ -52,3 +52,19 @@ footer {
     letter-spacing: 0.22em;
   }
 }
+
+
+/* V3 — JURU red contact treatment */
+.contact-link,
+.contact-link:link,
+.contact-link:visited,
+.contact-link:hover,
+.contact-link:active,
+.contact-link:focus-visible {
+  color: #9d1f1f !important;
+  -webkit-text-fill-color: #9d1f1f;
+}
+
+.contact-link::after {
+  background: #9d1f1f;
+}
